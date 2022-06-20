@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>soutenance mémoire</title>
+
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/white.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate>
+					<a href="https://checkandvisit.com/">
+						<img
+							src="assets/checkandvisit.svg"
+							alt="Check & Visit logo"
+							style="
+								height: 180px;
+								margin: 0 auto 4rem auto;
+								background: transparent;
+							"
+							class="demo-logo"
+						/>
+					</a>
+					<h2>Soutenance de mémoire</h2>
+					<p style="margin-top: 100px">
+						<small>Jérémy LLANTA</small> <br />
+						<small>Développeur backend</small>
+					</p>
+				</section>
+				<section data-auto-animate>
+					<section data-auto-animate>
+						<a href="https://checkandvisit.com/">
+							<img
+								src="assets/checkandvisit.svg"
+								alt="Check & Visit logo"
+								style="
+									height: 180px;
+									margin: 0 auto 4rem auto;
+									background: transparent;
+								"
+								class="demo-logo"
+							/>
+						</a>
+						<p>
+							<ul>
+								<li>Startup bretonne</li>
+								<li>Externalisation d'état des lieux</li>
+								<li>40 collaborateurs et 200 checkers</li>
+							</ul>
+						</p>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>Méthodologie SWARM</h2>
+						<img src="assets/bee.png"/>
+						<p>
+							<ul>
+								<li class="fragment">SOP</li>
+								<li class="fragment">CORE</li>
+							</ul>
+						</p>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>CORE</h2>
+						<ul class="fragment">
+							<li>1 product owner</li>
+							<li>1 lead développeur</li>
+							<li>2 développeurs seniors</li>
+							<li>2 développeurs juniors</li>
+						</ul>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>SOP</h2>
+						<p>
+							<small>Scale Our Product</small>
+						</p>
+						<p>
+							<ul class="fragment">
+								<li>1 product owner</li>
+								<li>1 lead développeur</li>
+								<li>2 développeurs seniors</li>
+								<li>4 développeurs juniors</li>
+							</ul>
+						</p>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>OKR</h2>
+						<p>
+							<small>Objectives and Key Results</small>
+						</p>
+						<img src="assets/key.png"/>
+						<p class="fragment">Cycle de 6 semaines</p>
+						<p class="fragment">3 sprints de 2 semaines</p>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>OKR</h2>
+						<p>
+							<small>Objectives and Key Results</small>
+						</p>
+						<img src="assets/key.png"/>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
