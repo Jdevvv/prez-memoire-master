@@ -103,12 +103,246 @@
 						<p class="fragment">3 sprints de 2 semaines</p>
 					</section>
 					<section data-auto-animate id="fragments">
-						<h2>OKR</h2>
-						<p>
-							<small>Objectives and Key Results</small>
-						</p>
-						<img src="assets/key.png"/>
+						<h2>Microservices</h2>
+						<img src="assets/microservice.png"/>
+						<p class="fragment">Infrastructure As Code</p>
 					</section>
+				</section>
+				<section>
+					<section data-auto-animate id="fragments">
+						<h2>La plateforme cliente</h2>
+						<img src="assets/1&1.png"/>
+						<img src="assets/laravel.png" style="
+						height: 140px;
+						margin: 0 auto 3rem auto;
+						"/>
+						<img src="assets/vue.png" style="
+						height: 140px;
+						margin: 0 auto 3rem auto;
+						"/>
+						<p>
+							<ul class="fragment">
+								<li>Plus ou moins fonctionnelle</li>
+								<li>Mauvaise ergonomie</li>
+								<li>Difficile à maintenir</li>
+							</ul>
+						</p>
+					</section>
+					<section data-auto-animate id="fragments">
+						<h2>Refonte de la plateforme</h2>
+						<img src="assets/serverless.png"
+						style="
+						height: 60px;
+						margin: 0 2rem 3rem auto;
+						"/>
+						<img src="assets/logo-aws.png" 
+						style="
+						height: 80px;
+						margin: 0 auto 3rem auto;
+						"/>
+						<img src="assets/vue.png" 
+						style="
+						height: 80px;
+						margin: 0 auto 3rem auto;
+						"/>
+						<p class="fragment">Migrer progressivement</p>
+					</section>
+				</section>
+				<section data-auto-animate id="fragments">
+					<section>
+						<h2>La base logement</h2>
+						<p>Retravailler la partie réservation d'état des lieux</p>
+						<p>→ Liste de logements</p>
+					</section>
+					<section>
+						<h2>La base logement</h2>
+						<img src="assets/bl.png" style="
+						height: 500px;
+						margin: 0 auto 3rem auto;
+						"/>
+					</section>
+					<section>
+						<h2>La base logement</h2>
+						<p>→ Développement de l'API</p>
+						<p>→ Prise en main du framework Serverless</p>
+						<div style="margin-top: 5rem;">
+							<pre class="fragment">$ serverless offline start --stage dev</pre>
+							<pre class="fragment">$ serverless deploy --stage dev</pre>
+						</div>
+					</section>
+					<section>
+						<h2>La base logement</h2>
+						<p>→ Lancement du frontend</p>
+						<img src="assets/bundler.png" style="
+						height: 100px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+				</section>
+				<section data-auto-animate id="fragments">
+					<section>
+						<h2>L'authentification</h2>
+						<p>
+							<ul>
+								<li class="fragment">Ajout dans Zoho Books</li>
+								<li class="fragment">Insertion dans la base de données</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>L'authentification</h2>
+						<ul>
+							<li class="fragment">OWASP</li>
+							<li class="fragment">Création d’un compte interne</li>
+							<li class="fragment">Ajout dans Zoho Books</li>
+							<li class="fragment">Insertion dans la base de données</li>
+							<li class="fragment">Envoie d'un email + slack</li>
+						</ul>
+					</section>
+					<section>
+						<h2>L'authentification</h2>
+						<img src="assets/authentication.png" style="
+						height: 300px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+					<section>
+						<h2>L'authentification</h2>
+						<p>Développement de l'API</p>
+						<p class="fragment">Ajout de tests</p>
+					</section>
+					<section>
+						<h2>L'authentification</h2>
+						<p>Développement de l'API</p>
+						<p class="fragment">Ajout de tests</p>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">L'authentification</h2>
+						<p>Test de succès</p>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|3-5|7-8"><script type="text/template">
+							describe("login client", () => {
+							  it("Success", async () => {
+							    const response = await instance.post("/login", {
+								  email: "testauthservice@gmail.com",
+								  password: "testauthservice",
+							  });
+							  expect(response.status).to.be.equal(200);
+							  expect(response.data.token).to.be.not.null;
+							});
+						</script></code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">L'authentification</h2>
+						<p>Test d'erreur</p>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|4-6|9-10"><script type="text/template">
+							describe("login client", () => {
+								it("Fail: bad email format", async () => {
+									try {
+										await instance.post("/login", {
+										email: "testauthservicegmail.com",
+										password: "testauthservice",
+									});
+									} catch (error) {
+										expect(error.response.status).to.be.equal(400);
+										expect(error.response.data).to.be.equal("Invalid email format");
+									}
+								});
+							});
+						</script></code></pre>
+					</section>
+					<section id="fragments">
+						<h2>L'authentification</h2>
+						<p>Esbuild</p>
+						<img class="fragment" src="assets/esbuild.png" style="
+						height: 150px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+				</section>
+				<section data-auto-animate>
+					<section>
+						<h2>La facturation périodique</h2>
+						<img class="fragment" src="assets/old-invoicing.png" style="
+						height: 150px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+					<section>
+						<h2>La facturation périodique</h2>
+						<img class="fragment" src="assets/new-invoicing.png" style="
+						height: 200px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+					<section>
+						<h2>La facturation périodique</h2>
+						<img class="fragment" src="assets/erd-periodic-invoicing.png" style="
+						height: 350px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+					<section id="fragments">
+						<h2>La facturation périodique</h2>
+						<p>Refactorer l'API</p>
+						<ul>
+							<li class="fragment">SNS</li>
+							<li class="fragment">CRON</li>
+							<li class="fragment">Lambda</li>
+							<li class="fragment">Webhook</li>
+						</ul>
+					</section>
+					<section>
+						<h2>La facturation périodique</h2>
+						<p>Webhook : Problème d'ordonnance</p>
+						<p class="fragment">→ Passer par une queue</p>
+						<img class="fragment" src="assets/sqs.png" style="
+						height: 200px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+					<section>
+						<h2>La facturation périodique</h2>
+						<p>Webhook : Problème d'ordonnance</p>
+						<div class="fragment">
+							<p>→ file d'attente FIFO</p>
+							<small>First-In-First-Out</small>
+						</div>
+						<img class="fragment" src="assets/sqs-fifo.png" style="
+						height: 100px;
+						margin: 2rem auto 3rem auto;
+						"/>
+					</section>
+				</section>
+				<section>
+					<section id="fragments">
+						<h2>La mise en production</h2>
+						<p class="fragment">Phase de tests</p>
+						<p class="fragment">Migration progressive</p>
+					</section>
+				</section>
+				<section id="fragments">
+					<section>
+						<h2>Avec du recul</h2>
+						<p class="fragment">Retours positifs et quantifiables</p>
+						<p class="fragment">Risques identifiés en amont</p>
+						<p class="fragment">Remettre au propre</p>
+						<p class="fragment">Bonne gestion du projet</p>
+					</section>
+					<section>
+						<h2>Avec du recul</h2>
+						<p class="fragment">Conforté sur mes préférences</p>
+						<p>
+							<ul>
+								<li class="fragment">TDD</li>
+								<li class="fragment">Design system</li>
+								<li class="fragment">Logs</li>
+								<li class="fragment">Standardiser</li>
+							</ul>
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>Conclusion</h2>
 				</section>
 			</div>
 		</div>
@@ -117,10 +351,11 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
-				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
 			});
 		</script>
 	</body>
