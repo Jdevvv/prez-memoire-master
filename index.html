@@ -65,11 +65,6 @@
 								<li>40 collaborateurs et 200 checkers</li>
 							</ul>
 						</p>
-
-						<aside class="notes">
-							Partie R&D <br>
-							Equipe web : 12 personnes, dev juniors/seniors, lead, PO
-						</aside>
 					</section>
 					<section data-auto-animate id="fragments">
 						<h2>Méthodologie SWARM</h2>
@@ -173,6 +168,7 @@
 							principale source de revenu et la plus régulière <br>
 							d'autres fonctionnalité mais client plutot passif <br>
 							construite assez rapidement (MVP) <br>
+							liste <br>
 							blocages ralentissaient équipes <br>
 							marre de faire des petits fix <br>
 							2 choix : continuer a maintenir et améliorer difficilement ou reconstruire et repartir sur bonnes bases
@@ -202,7 +198,6 @@
 							objectif nouvelle plateforme, reprendre fonctionnalités existantes tout en ajoutant de nouvelles <br>
 							rendre 100% autonome client <br>
 							architecturée autour services AWS, Node/js avec Serverless et Vue <br>
-							2 plateformes coexister au début
 						</aside>
 					</section>
 				</section>
@@ -300,14 +295,12 @@
 						<aside class="notes">
 							rédiger spec techniques <br>
 							normes OWASP : normes sécurisées pour app web <br>
-							chiffrer avec Bcrypt (fonction de hashage qui existe en lib JS) <br>
-							conseiller mdp entre 8 et 64 caractères <br>
 						</aside>
 					</section>
 					<section>
 						<h2>L'authentification</h2>
 						<img src="assets/authentication.png" style="
-						height: 300px;
+						height: 500px;
 						margin: 2rem auto 3rem auto;
 						"/>
 					</section>
@@ -415,20 +408,19 @@
 					<section>
 						<h2>La facturation périodique</h2>
 						<img class="fragment" src="assets/erd-periodic-invoicing.png" style="
-						height: 350px;
+						height: 600px;
 						margin: 2rem auto 3rem auto;
 						"/>
 
 						<aside class="notes">
 							stockait dans DynamoDB <br>
 							API pour requêter ces données <br>
-							avantages : avoir facilement infos factures / devis sans passer par API Zoho et limite d'appels <br>
-							inconvénient : mélanger info de MariaDB et Dynamodb <br>
-							unitairement, jointure se faisait bien mais probleme de perf si list <br>
-							Lorsque presta programmé, pas encore de devis, donc besoin d'avoir infos <br>
-							rédiger spec techniques, nouvelles tables <br>
-							gérer factu classique & périodique <br>
-							champs se répètent, meilleure flexibilité pour manipuler
+							Avantages : avoir facilement infos factures / devis sans passer par API Zoho et limite d'appels <br>
+							Inconvénient : mélanger info de MariaDB et Dynamodb <br>
+							Unitairement, jointure se faisait bien mais probleme de perf si list <br>
+							Rédiger spec techniques, nouvelles tables <br>
+							Gérer factu classique & périodique <br>
+							Champs se répètent, meilleure flexibilité pour manipuler
 						</aside>
 					</section>
 					<section id="fragments">
@@ -501,14 +493,16 @@
 						<p class="fragment">Risques identifiés en amont</p>
 						<p class="fragment">Remettre au propre</p>
 						<p class="fragment">Bonne gestion du projet</p>
+
+						<aside class="notes">
+							Bons retours clients et internes <br>
+							Dépendance a AWS, tarification, bugs impactant client/op, correction bug plus courte <br>
+							Remettre a plat parcours client, repartir sur une base + solide<br>
+							Specs claires, autonomie sur tickets, bonne entraide, itération et remise en question
+						</aside>
 					</section>
 
-					<aside class="notes">
-						Bons retours clients et internes <br>
-						Dépendance a AWS, tarification, bugs impactant client/op <br>
-						Remettre a plat parcours client, ajd beaucoup de client, correction bug plus courte <br>
-						Specs claires, autonomie sur tickets, bonne entraide, itération et remise en question
-					</aside>
+					
 					<section>
 						<h2>Avec du recul</h2>
 						<p class="fragment">Conforté sur mes préférences</p>
@@ -524,9 +518,9 @@
 						<aside class="notes">
 							Appétence JS/TS, back et front mais + back, architecture de service, cloud computing, être mix dev web et architecte web <br>
 							Qlq améliorations peuvent être apportées : <br>
-							Plusieurs philosophie sur les tests, pro tests unitaires vs tests fonctionnels pdt le dev, certains services bcp de tests d'autres non, CI, réduire la régression, + de confiance lors de MEP, documentation naturelle <br>
+							Plusieurs philosophie sur les tests, pro tests unitaires vs tests fonctionnels pdt le dev, certains services bcp de tests d'autres non, réduire la régression, + de confiance lors de MEP, documentation naturelle <br>
 							Uniformiser applications, coder nos composants dans tt états, tester communication d'autres composants + CI <br>
-							Limites microservices, debuggage fastidieux, cloudwatch puissant mais pas pratique, Datadog pour catégoriser et filtrer + alertes & dashboards <br>
+							Limites microservices, debuggage fastidieux <br>
 							Chaque membre préférence pour coder, perso snake_case pour variable car plus lisible, camelCase pour fonctions et méthode, RFC 
 						</aside>
 					</section>
